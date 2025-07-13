@@ -1,0 +1,111 @@
+.register-form{
+    width:600px;
+    max-width: 90%;
+    margin:0 auto;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+.register-form__heading {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.register-form__inner {
+    margin: 32px auto 0;
+    width: 100%;
+    max-width: 600px;
+    font-size: 16px;
+    text-align:left;
+}
+
+.register-form__group {
+    display: grid;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.register-form__required {
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.register-form__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color:white;
+    color:#333;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.register-form__input::placeholder {
+    color: #ccc;
+}
+
+.register-form__label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.register-form__error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.register-form__textarea {
+    padding: 8px 16px;
+    height: 200px;
+    background-color: white;
+    color: #333;
+    width: 100%;
+    max-width: 600px;
+}
+
+.register-form__btns {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.register-form__btn {
+    display: inline-block;
+    padding: 12px 32px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin: 0 12px;
+    min-width: 120px;
+    transition: background-color 0.3s ease;
+}
+
+/* 戻るボタン（グレー） */
+.register-form__btn-back {
+    background-color: #ccc;
+    color: #333;
+}
+
+.register-form__btn-back:hover {
+    background-color: #bbb;
+}
+
+/* 登録ボタン（黄色） */
+.register-form__btn{
+    background-color: #ffd700;
+    color: #333;
+}
+
+.register-form__btn--submit:hover {
+    background-color: #e6c200;
+}

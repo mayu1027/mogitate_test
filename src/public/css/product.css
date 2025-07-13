@@ -1,0 +1,155 @@
+/* 全体ラッパー */
+.product {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* タイトル */
+.product__heading {
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+/* 商品追加リンク */
+.header__link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #ffd700;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.header__link:hover {
+    background-color: #e6c200;
+}
+
+/* 横並び用の全体レイアウト */
+.product__container {
+    display: flex;
+    gap: 24px;
+}
+
+/* 左の検索サイドバー */
+.product__sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.search-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.search-form button {
+    width: 100%;
+    padding: 8px;
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #e6c200;
+}
+
+/* 右側のメインコンテンツ */
+.product__main {
+    flex: 1;
+}
+
+/* 商品リスト（グリッド） */
+.product__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* 各商品ブロック */
+.product-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+}
+
+/* 商品画像 */
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+    max-height: 200px;
+}
+
+/* 商品名と価格 */
+.product-name {
+    font-size: 18px;
+    margin: 10px 0 4px;
+    color: #333;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #666;
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px;
+    list-style: none;
+    padding-left: 0;
+    font-size: 16px;
+}
+
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a,
+.pagination li span {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pagination li a:hover {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #333;
+}
+
+.pagination li.active span {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #333;
+    font-weight: bold;
+    cursor: default;
+}
