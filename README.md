@@ -1,7 +1,9 @@
 # もぎたて
 
 ## 環境構築
+
 ### Dockerビルド
+
 1.git clone https://github.com/mayu1027/mogitate_test
 2.cd mogitate_test
 3.docker-compose build
