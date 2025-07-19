@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="ChatGPT Image 2025年7月19日 14_09_50" src="https://github.com/user-attachments/assets/c2c465ec-e979-4fc5-87c8-7d2bb64edace" /># もぎたて
+# もぎたて
 
 ## 環境構築
 
