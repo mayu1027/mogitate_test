@@ -1,0 +1,134 @@
+.product-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.form-group {
+    margin: top 10px;px;
+}
+
+.form-body {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 20px;
+}
+
+.radio-group {
+    margin-top: 8px;
+    /* ラベルとラジオボタンの間の余白 */
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 16px;
+    /* ラジオボタン間のスペース */
+    cursor: pointer;
+}
+
+.breadcrumb {
+    font-size: small;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.breadcrumb a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: small;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.image-block {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.image-block img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.info-block {
+    flex: 1;
+}
+
+.season-options {
+    display: flex;
+    gap: 16px;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form textarea {
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.product-form input[type="file"] {
+    margin-top: 10px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-back {
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: normal;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #aaa;
+}
+
+.btn-edit {
+    padding: 10px 20px;
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-edit:hover {
+    background-color: #e6c200;
+}
+
+.register-form__error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
