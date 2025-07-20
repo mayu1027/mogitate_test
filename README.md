@@ -2,28 +2,25 @@
 
 ## 環境構築
 
-### Dockerビルド
+## Dockerビルド
 
 1.git clone https://github.com/mayu1027/mogitate_test
 
-2.cd mogitate_test
+2.docker-compose up -d --build
 
-3.docker-compose build
+## Laravel環境構築
 
-4.docker-compose up -d
+1.docker-compose exec php bash
 
-5.docker-compose exec app composer install
+2.composer instal
 
-6.cp .env.example .env
+3. .env.example ファイルから .env を作成し、環境変数を変更
 
-  docker-compose exec app php artisan key:generate
+4.php artisan key:generate
 
+5.php artisan migrate
 
-7.docker-compose exec app php artisan migrate
-
-8.docker-compose exec app php artisan db:seed
-
-9.ocker-compose exec app php artisan storage:link
+6.php artisan db:seed
 
 ## 使用技術
 
