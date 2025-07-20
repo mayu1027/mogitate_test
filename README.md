@@ -4,7 +4,7 @@
 
 ### Dockerビルド
 
-1.git clone https://github.com/mayu1027/mogitate_test
+1.git clone git@github.com:mayu1027/mogitate_test.git
 
 2.docker-compose up -d --build
 
