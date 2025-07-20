@@ -2,13 +2,13 @@
 
 ## 環境構築
 
-## Dockerビルド
+### Dockerビルド
 
 1.git clone https://github.com/mayu1027/mogitate_test
 
 2.docker-compose up -d --build
 
-## Laravel環境構築
+### Laravel環境構築
 
 1.docker-compose exec php bash
 
