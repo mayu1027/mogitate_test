@@ -16,13 +16,14 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $query = Product::query();
+
         if ($request->has('sort')) {
             if ($request->sort === 'high') {
                 $query->orderBy('price', 'desc');
             } elseif ($request->sort === 'low') {
                 $query->orderBy('price', 'asc');
             }
-    }
+        }
 
     $products = $query->paginate(6)->appends($request->all());
     return view('products.product', compact('products'));
@@ -52,6 +53,7 @@ class ProductController extends Controller
             $path = $request->file('image')->store('public/images');
             $validated['image'] = basename($path);
     }
+
     Product::create($validated);
     return redirect()->route('products.index');
 }
@@ -117,21 +119,22 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
+        $product->Product::findOrFail($id);
         $product->delete();
-                return redirect()->route('products.index')->with('message', '商品を削除しました');
+
+        return redirect()->route('products.index')->with('message', '商品を削除しました');
     }
 
     public function search(Request $request)
     {
-    $keyword = $request->input('keyword');
-    $query = Product::query();
+        $keyword = $request->input('keyword');
+        $query = Product::query();
 
-    if (!empty($keyword)) {
+        if (!empty($keyword)) {
         $query->where('name', 'LIKE', "%{$keyword}%");
-    }
+        }
 
-    $products = $query->paginate(6)->appends($request->all());
-
-    return view('products.product', compact('products', 'keyword'));
+        $products = $query->paginate(6)->appends($request->all());
+        return view('products.product', compact('products', 'keyword'));
     }
 }

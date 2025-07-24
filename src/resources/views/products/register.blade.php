@@ -83,7 +83,7 @@
         </div>
 
         <div class="register-form__btns">
-        <input class="register-form__btn-back" type="button" value="戻る" name="back">
+        <a href="{{ url('/products') }}" class="register-form__btn-back btn">戻る</a>
         <input class="register-form__btn btn" type="submit" value="登録">
         </div>
         </form>

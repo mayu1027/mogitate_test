@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'キウイ',
                 'price' => 800,
-                'season' => '秋', '冬' ,
+                'season' => '秋',
                 'description' => 'キウイは甘みと酸味のバランスが絶妙なフルーツです。ビタミンCなどの栄養素も豊富のため、美肌効果や疲労回復効果も期待できます。もぎたてフルーツのスムージーをお召し上がりください！',
                 'image' => 'kiwi.png',
                 'created_at' => Carbon::now(),
@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'シャインマスカット',
                 'price' => 1400,
-                'season' => '夏', "秋" ,
+                'season' => '夏',
                 'description' => '爽やかな香りと上品な甘みが特長的なシャインマスカットは大人から子どもまで大人気のフルーツです。疲れた脳や体のエネルギー補給にも最適の商品です。もぎたてフルーツのスムージーをお召し上がりください！',
                 'image' => 'muscat.png',
                 'created_at' => Carbon::now(),
@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'パイナップル',
                 'price' => 800,
-                'season' => '春', '夏' ,
+                'season' => '春',
                 'description' => '甘酸っぱさとトロピカルな香りが特徴のパイナップル。当店では甘さと酸味のバランスが絶妙な国産のパイナップルを使用しています。もぎたてフルーツのスムージをお召し上がりください！',
                 'image' => 'pineapple.png',
                 'created_at' => Carbon::now(),
@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'ブドウ',
                 'price' => 1100,
-                'season' => '夏', '秋' ,
+                'season' => '夏',
                 'description' => 'ブドウの中でも人気の高い国産の「巨峰」を使用しています。高い糖度と適度な酸味が魅力で、鮮やかなパープルで見た目も可愛い商品です。もぎたてフルーツのスムージーをお召し上がりください！',
                 'image' => 'grapes.png',
                 'created_at' => Carbon::now(),
@@ -101,7 +101,7 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'メロン',
                 'price' => 900,
-                'season' => '春', '夏' ,
+                'season' => '春',
                 'description' => '香りがよくジューシーで品のある甘さが人気のメロンスムージー。カリウムが多く含まれているためむくみ解消効果も抜群です。もぎたてフルーツのスムージーをお召し上がりください！',
                 'image' => 'melon.png',
                 'created_at' => Carbon::now(),
