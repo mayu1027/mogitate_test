@@ -79,7 +79,11 @@
             <button type="submit" class="btn-edit">変更を保存</button>
             <form action="{{ url('/products/' . $product->id . '/delete') }}" method="POST" style="display:inline;">
                 @csrf
-                <button type="submit" class="btn-delete" onclick="return confirm('本当に削除しますか？');">削除</button>
+                <div class="trash-can-content">
+                        <a href="/products/{{$product->id}}/delete">
+                            <img src="{{ asset('/images/trash-can.png') }}" alt="ゴミ箱の画像" class="img-trash-can" />
+                        </a>
+                    </div>
             </form>
         </div>
     </form>

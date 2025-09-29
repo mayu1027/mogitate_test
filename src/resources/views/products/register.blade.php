@@ -34,9 +34,13 @@
                 <input class="register-form__input register-form__price-input" type="number" name="price" id="price" value="{{ old('price') }}" placeholder="値段を入力">
             </div>
             <div class="register-form__error-message">
-                @if ($errors->has('price'))
-                <p class="register-form__error-message">{{$errors->first('price')}}</p>
-                @endif
+            @if ($errors->any())
+    <ul>
+        @foreach ($errors->all() as $message)
+            <li>{{ $message }}</li>
+        @endforeach
+    </ul>
+@endif
             </div>
         </div>
 

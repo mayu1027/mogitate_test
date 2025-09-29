@@ -88,7 +88,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(RegisterRequest $request, Product $product)
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -117,12 +117,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function postDelete($product_id)
     {
-        $product->Product::findOrFail($id);
+        $product = Product::find($product_id);
         $product->delete();
+        $message = "製品の削除が完了しました。";
+        $products = Product::paginate(6);
 
-        return redirect()->route('products.index')->with('message', '商品を削除しました');
+        return redirect('/products')->with(compact('products','message'));
     }
 
     public function search(Request $request)
