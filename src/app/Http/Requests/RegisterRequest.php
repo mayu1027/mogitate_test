@@ -48,6 +48,6 @@ class RegisterRequest extends FormRequest
     }
     public function getRedirectUrl()
 {
-    return route('products.create'); // ※createがregisterならroute('products.register')
+    return route('products.show', $this->product->id);
 }
 }
