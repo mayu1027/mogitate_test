@@ -4,31 +4,21 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
+    public function authorize(): bool
     {
-        return true;
+        return true; // ←必ず true を返す
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'price' => 'required|numeric|between:0,10000',
-            'season' => 'required|string',
-            'description' => 'required|string|max:120',
-            'image' => 'required|mimes:jpeg,png|max:2048',
+            'name' => ['required', 'string', 'max:255'],
+            'price' => ['required', 'integer', 'min:0'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg', 'max:4096'],
+            'season' => ['required', 'in:春,夏,秋,冬'],
+            'description' => ['required', 'string', 'max:10000'],
         ];
     }
 
@@ -46,9 +36,5 @@ class RegisterRequest extends FormRequest
             'image.mimes' => '「.png」または「.jpeg」形式でアップロードしてください',
         ];
     }
-    public function getRedirectUrl()
-    {
-    return route('products.show', $this->product->id);
-    }
-
 }
+

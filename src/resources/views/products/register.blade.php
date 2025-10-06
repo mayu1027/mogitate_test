@@ -5,7 +5,7 @@
 @endsection
 
 @section('link')
-<
+
 
 @section('content')
 <div class="register-form">
@@ -34,13 +34,13 @@
                 <input class="register-form__input register-form__price-input" type="number" name="price" id="price" value="{{ old('price') }}" placeholder="値段を入力">
             </div>
             <div class="register-form__error-message">
-            @if ($errors->any())
-    <ul>
-        @foreach ($errors->all() as $message)
-            <li>{{ $message }}</li>
-        @endforeach
-    </ul>
-@endif
+            @if ($errors->has('price'))
+            <ul>
+                @foreach ($errors->get('price') as $message)
+                <li class="register-form__error-message">{{ $message }}</li>
+                @endforeach
+            </ul>
+            @endif
             </div>
         </div>
 
@@ -52,7 +52,11 @@
             </div>
             <div class="register-form__error-message">
                 @if ($errors->has('image'))
-                <p class="register-form__error-message">{{$errors->first('image')}}</p>
+                <ul>
+                    @foreach ($errors->get('image') as $message)
+                    <li class="register-form__error-message">{{ $message }}</li>
+                    @endforeach
+                </ul>
                 @endif
             </div>
         </div>
@@ -74,7 +78,7 @@
         </div>
 
         <div class="register-form__group">
-            <label class="register-form__label" for="description">商品説明<span class="register-form__required">必須</span>
+        <label class="register-form__label" for="description">商品説明<span class="register-form__required">必須</span>
             </label>
             <div class="register-form__description-input">
             <textarea class="register-form__textarea" name="description" id="" cols="30" rows="10" placeholder="商品の説明を入力">{{ old('description')}}</textarea>
@@ -83,6 +87,7 @@
                 @if ($errors->has('description'))
                 <p class="register-form__error-message">{{$errors->first('description')}}</p>
                 @endif
+            </div>
             </div>
         </div>
 

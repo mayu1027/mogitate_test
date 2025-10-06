@@ -20,7 +20,9 @@
             </div>
             <div class="register-form__error-message">
                 @if ($errors->has('image'))
-                <p class="register-form__error-message">{{$errors->first('image')}}</p>
+                @foreach ($errors->get('image') as $message)
+                <p class="register-form__error-message">{{$message}}</p>
+                @endforeach
                 @endif
             </div>
 
@@ -31,7 +33,9 @@
                 </div>
                 <div class="register-form__error-message">
                 @if ($errors->has('name'))
-                <p class="register-form__error-message">{{$errors->first('name')}}</p>
+                @foreach ($errors->get('name') as $message)
+                <p class="register-form__error-message">{{$message}}</p>
+                @endforeach
                 @endif
                 </div>
 
@@ -41,7 +45,9 @@
                 </div>
                 <div class="register-form__error-message">
                 @if ($errors->has('price'))
-                <p class="register-form__error-message">{{$errors->first('price')}}</p>
+                @foreach ($errors->get('price') as $message)
+                <p class="register-form__error-message">{{$message}}</p>
+                @endforeach
                 @endif
             </div>
 
@@ -69,8 +75,10 @@
             <textarea name="description">{{ old('description', $product->description) }}</textarea>
         </div>
         <div class="register-form__error-message">
-                @if ($errors->has('description'))
-                <p class="register-form__error-message">{{$errors->first('description')}}</p>
+                @if ($errors->any())
+                @foreach ($errors->all() as $message)
+                <p class="register-form__error-message">{{ $message }}</p>
+                @endforeach
                 @endif
                 </div>
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
+use App\Http\Requests\UpdateProductRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -88,29 +90,34 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(RegisterRequest $request, Product $product)
+    public function update(UpdateProductRequest $request, Product $product)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'price' => 'required|integer|min:0',
-            'season' => 'required|in:春,夏,秋,冬',
-            'description' => 'required|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+        // 1) バリデーション済みデータの取得
+        $data = $request->validated();
 
-        $product->name = $request->name;
-        $product->price = $request->price;
-        $product->season = $request->season;
-        $product->description = $request->description;
+        // 2) 新しい画像がある場合だけ差し替え
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $product->image = $imagePath;
+        // 旧ファイルを消すならここ（任意）
+        if ($product->image && Storage::disk('public')->exists('images/' . $product->image)) {
+            Storage::disk('public')->delete('images/' . $product->image);
         }
 
-        $product->save();
+        $path = $request->file('image')->store('images', 'public'); // "images/xxxx.jpg"
+        // 画面では asset('storage/images/'.$product->image) としているので
+        // DBにはファイル名だけを入れる:
+        $data['image'] = basename($path);
+        } else {
+        // 3) 画像未アップロード時は image を更新しない（既存を維持）
+        unset($data['image']);
+        }
 
-        return redirect()->route('products.show', $product->id)->with('message', '更新しました！');
+        // 4) 更新
+        $product->update($data);
+
+        return redirect()
+        ->route('products.store', $product->id);
     }
+
     /**
      * Remove the specified resource from storage.
      *
